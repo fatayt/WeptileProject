@@ -20,12 +20,13 @@ public class Quote_StepDefinitions {
         Driver.getDriver().get(ConfigReader.getProperty("WebUrl"));
     }
     @Given("Click on the testimonials section in the middle of the home page.")
-    public void click_on_the_testimonials_section_in_the_middle_of_the_home_page() {
+    public void click_on_the_testimonials_section_in_the_middle_of_the_home_page() throws InterruptedException {
+        Thread.sleep(3000);
         weptile_pages.testimonialsButton.click();
     }
     @Given("Click on the Get a Quote Now button.")
     public void click_on_the_get_a_quote_now_button() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         weptile_pages.quoteButton.click();
     }
     @Given("User enters the required information")
@@ -41,7 +42,8 @@ public class Quote_StepDefinitions {
 
     }
     @Then("Assert a message that the offer request has been sent")
-    public void assert_a_message_that_the_offer_request_has_been_sent() {
+    public void assert_a_message_that_the_offer_request_has_been_sent() throws InterruptedException {
+        Thread.sleep(3000);
         Assert.assertTrue(weptile_pages.asserttext.isDisplayed());
 
     }
