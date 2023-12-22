@@ -303,4 +303,9 @@ public class ReusableMethods {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,25)", "");
     }
-}
+
+        public static void scrollToElement(WebDriver driver, WebElement element) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        }
+
+    }
